@@ -1,16 +1,82 @@
 #include "libft.h"
-#include <stddef.h>
+#include <string.h>
+
 int ft_count_calloc(int n);
-char ft_nmbrput(int n, char *result);
 
 char *ft_itoa(int n)
 {
-	size_t	i;
-	char *	result;
+	int	count;
+	char	*result;
+	long	nbr;
 
-	i = 0:
-	result = ft_calloc(ft_count_calloc(n), sizeof(char));
-	ft_nmbrput(n, result);
+	nbr = n;
+	if (n == 0)
+		return (ft_strdup("0"));
+	result = ft_calloc(count + 1, sizeof(char));
+	if (n < 0)
+	{
+		n *= -1;
+		count++;
+	}
+	while (0 < count)
+	{
+		result[--count] = n % 10 + '0';
+		n = n / 10;
+	}
+	if (chill)
+		*result = '-';
+	return (result);
+}
+
+int ft_count_calloc(int n)
+{
+	size_t	count;
+	if (n < 0)
+		n *= -1;
+	count = 0;
+	while (n > 0)
+	{
+		n /= 10;
+		count++;
+	} 
+	return (count);
+}
+int main(void)
+{
+	int i = INT_MAX;
+	int j = INT_MIN;
+	printf("i: %s\n", ft_itoa(i));
+	printf("j: %s\n", ft_itoa(j));
+}
+/*#include "libft.h"
+#include <string.h>
+
+int ft_count_calloc(int n);
+char ft_nmbrput(int n, char *result);
+char *ft_reverse_str(char *s);
+
+char *ft_itoa(int n)
+{
+	size_t	sign_len;
+	char *	result;
+	char *	result_sign;
+	size_t len;
+
+	len = ft_count_calloc(n) + 1;
+	if (n < 0)
+		len++;
+	
+	result = ft_calloc(len, sizeof(char));
+	sign_len = 0;
+	if (n < 0)
+	{
+		result[0] = '-';
+		sign_len++;
+	}
+
+	ft_nmbrput(n, result + sign_len);
+	result_sign = result + sign_len;
+	result_sign = ft_reverse_str(result + sign_len);
 	return (result);
 }	
 
@@ -19,18 +85,44 @@ int ft_count_calloc(int n)
 {
 	size_t	count;
 
-	if (n < 0)
-    	n = n * -1;
-	count = 1;
-	while (n / 10 >= 0)
-		count++; 
+	count = 0;
+	while (n > 0)
+	{
+		n /= 10;
+		count++;
+	} 
 	return (count);
 }
 
 
-char ft_nmbrput(int n, char *result)
+char ft_nmbrput(int input, char *result)
 {
+	long n;
+	n = input;
+	if (n < 0)
+		n *= -1;
 	if (n > 9)
-		*result = ft_nmbrput(n / 10, ++result);
-	return (n % 10 + '0');			
+		*result = ft_nmbrput(n / 10, result + 1);
+	*result = n % 10 + '0';
+	return (*result);			
 }
+
+char *ft_reverse_str(char *s)
+{
+	size_t	i;
+	size_t	j;
+	char	c;
+
+	i = 0;
+	j = ft_strlen(s) - 1;
+	
+	while (j > i)
+	{
+		c = s[i];
+		s[i++] = s[j];
+		s[j--] = c;
+	}
+	return (s);
+}
+*/
+
