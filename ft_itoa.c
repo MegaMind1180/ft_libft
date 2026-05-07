@@ -3,13 +3,14 @@
 
 int ft_count_calloc(int n);
 
-char *ft_itoa(int n)
+char *ft_itoa(int nbr)
 {
 	int	count;
 	char	*result;
-	long	nbr;
-
-	nbr = n;
+	long	n;
+	
+	count = ft_count_calloc(n);
+	n = nbr;
 	if (n == 0)
 		return (ft_strdup("0"));
 	result = ft_calloc(count + 1, sizeof(char));
@@ -17,14 +18,13 @@ char *ft_itoa(int n)
 	{
 		n *= -1;
 		count++;
+
 	}
 	while (0 < count)
 	{
 		result[--count] = n % 10 + '0';
 		n = n / 10;
 	}
-	if (chill)
-		*result = '-';
 	return (result);
 }
 
@@ -35,10 +35,7 @@ int ft_count_calloc(int n)
 		n *= -1;
 	count = 0;
 	while (n > 0)
-	{
 		n /= 10;
-		count++;
-	} 
 	return (count);
 }
 int main(void)
@@ -48,7 +45,8 @@ int main(void)
 	printf("i: %s\n", ft_itoa(i));
 	printf("j: %s\n", ft_itoa(j));
 }
-/*#include "libft.h"
+/*
+#include "libft.h"
 #include <string.h>
 
 int ft_count_calloc(int n);
@@ -62,7 +60,7 @@ char *ft_itoa(int n)
 	char *	result_sign;
 	size_t len;
 
-	len = ft_count_calloc(n) + 1;
+	len = ft_count_calloc()c(n) + 1;
 	if (n < 0)
 		len++;
 	
