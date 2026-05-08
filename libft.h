@@ -29,4 +29,12 @@ char 	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
+int ft_lstsize(t_list *lst);
+
+typedef struct s_list
+{
+void *content;
+struct s_list *next;
+} t_list;
+
 #endif
