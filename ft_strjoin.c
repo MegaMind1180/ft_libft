@@ -3,11 +3,9 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	i;
-	size_t	j;
 	char	*dest;
 
 	i = ft_strlen(s1);
-	j = 0;
 	dest = malloc(ft_strlen(s1) + ft_strlen(s2));
 	if (!dest)
 		return (NULL);

@@ -21,6 +21,7 @@ void ft_putnbr_fd(int n, int fd)
 	write(fd, &c, 1);
 }
 
+/*
 int main(void)
 {
 	int i = INT_MAX;
@@ -29,3 +30,4 @@ int main(void)
 	ft_putnbr_fd(i, fd);
 	return (0);
 }
+*/

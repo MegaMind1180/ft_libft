@@ -9,11 +9,11 @@ char *ft_itoa(int nbr)
 	char	*result;
 	long	n;
 	
-	count = ft_count_calloc(n);
 	n = nbr;
+	count = ft_count_calloc(n);
 	if (n == 0)
 		return (ft_strdup("0"));
-	result = ft_calloc(count + 1, sizeof(char));
+	result = (char *)ft_calloc(count + 1, sizeof(char));
 	if (n < 0)
 	{
 		n *= -1;
@@ -38,6 +38,8 @@ int ft_count_calloc(int n)
 		n /= 10;
 	return (count);
 }
+
+/*
 int main(void)
 {
 	int i = INT_MAX;
@@ -45,7 +47,9 @@ int main(void)
 	printf("i: %s\n", ft_itoa(i));
 	printf("j: %s\n", ft_itoa(j));
 }
-/*
+
+
+
 #include "libft.h"
 #include <string.h>
 
