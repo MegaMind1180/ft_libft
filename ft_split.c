@@ -88,7 +88,7 @@ static void	ft_free(char **result)
 	}
 	free(result);
 }
-
+/*
 int	main(void)
 {
 	char	**arr;
@@ -106,3 +106,4 @@ int	main(void)
 	ft_free(arr);
 	return (0);
 }
+*/

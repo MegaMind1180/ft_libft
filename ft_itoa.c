@@ -87,7 +87,7 @@ int	main(void)
 	printf("i: %s\n", ft_itoa(x));
 }
 
-/*
+
 
 #include "libft.h"
 #include <string.h>
