@@ -1,51 +1,71 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wmezgoli <wmezgoli@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/17 17:05:13 by wmezgoli          #+#    #+#             */
+/*   Updated: 2026/05/17 17:05:15 by wmezgoli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-static int      ft_count_calloc(long n);
-char    *ft_itoa(int nbr)
+
+static int	ft_count_calloc(long n);
+
+char	*ft_itoa(int nbr)
 {
-        int     count;
-        char    *result;
-        long    n;
-        n = nbr;
-        if (n == 0)
-                return (ft_strdup("0"));
-        count = ft_count_calloc(n);
-        result = (char *)ft_calloc(count + 1, sizeof(char));
-        if (!result)
-                return (NULL);
-        if (n < 0)
-        {
-                result[0] = '-';
-                n *= -1;
-        }
-        while (0 < count)
-        {
-                result[--count] = n % 10 + '0';
-                n = n / 10;
-        }
-        return (result);
+	int		count;
+	char	*result;
+	long	n;
+
+	n = nbr;
+	if (n == 0)
+		return (ft_strdup("0"));
+	count = ft_count_calloc(n);
+	result = (char *)ft_calloc(count + 1, sizeof(char));
+	if (!result)
+		return (NULL);
+	if (n < 0)
+	{
+		result[0] = '-';
+		n *= -1;
+	}
+	while (0 < count)
+	{
+		result[--count] = n % 10 + '0';
+		n = n / 10;
+	}
+	return (result);
 }
-static int      ft_count_calloc(long n)
+
+static int	ft_count_calloc(long n)
 {
-        int     count;
-        if (n < 0)
-        {
-                n *= -1;
-                count = 1;
-        }
-        else
-                count = 0;
-        while (n > 0)
-        {
-                n /= 10;
-                count++;
-        }
-        return (count);
+	int	count;
+
+	if (n < 0)
+	{
+		n *= -1;
+		count = 1;
+	}
+	else
+		count = 0;
+	while (n > 0)
+	{
+		n /= 10;
+		count++;
+	}
+	return (count);
 }
 /*
-int main(void)
+int	main(void)
 {
-	int i = INT_MAX;
-	int j = INT_MIN;
+	int	i;
+	int	j;
+
+	i = INT_MAX;
+	j = INT_MIN;
 	printf("i: %s\n", ft_itoa(i));
 	printf("j: %s\n", ft_itoa(j));
 }
@@ -55,17 +75,18 @@ int main(void)
 #include "libft.h"
 #include <string.h>
 
-int ft_count_calloc(int n);
-char ft_nmbrput(int n, char *result);
-char *ft_reverse_str(char *s);
+int			ft_count_calloc(int n);
+char		ft_nmbrput(int n, char *result);
+char		*ft_reverse_str(char *s);
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	size_t	sign_len;
+	size_t	len;
+	size_t	count;
+
 	char *	result;
 	char *	result_sign;
-	size_t len;
-
 	len = ft_count_calloc()c(n) + 1;
 	if (n < 0)
 		len++;
@@ -77,18 +98,13 @@ char *ft_itoa(int n)
 		result[0] = '-';
 		sign_len++;
 	}
-
 	ft_nmbrput(n, result + sign_len);
 	result_sign = result + sign_len;
 	result_sign = ft_reverse_str(result + sign_len);
 	return (result);
 }	
-
-
-int ft_count_calloc(int n)
+int	ft_count_calloc(int n)
 {
-	size_t	count;
-
 	count = 0;
 	while (n > 0)
 	{
@@ -99,9 +115,10 @@ int ft_count_calloc(int n)
 }
 
 
-char ft_nmbrput(int input, char *result)
+char	ft_nmbrput(int input, char *result)
 {
-	long n;
+	long	n;
+
 	n = input;
 	if (n < 0)
 		n *= -1;
@@ -111,7 +128,7 @@ char ft_nmbrput(int input, char *result)
 	return (*result);			
 }
 
-char *ft_reverse_str(char *s)
+char	*ft_reverse_str(char *s)
 {
 	size_t	i;
 	size_t	j;
@@ -129,4 +146,3 @@ char *ft_reverse_str(char *s)
 	return (s);
 }
 */
-
