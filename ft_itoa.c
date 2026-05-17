@@ -13,7 +13,7 @@
 #include "libft.h"
 
 static int	ft_count_calloc(long n);
-char	*ft_ifminus(char *result, long n, int count);
+char		*ft_ifminus(char *result, long n, int count);
 
 char	*ft_itoa(int nbr)
 {
@@ -61,7 +61,7 @@ static int	ft_count_calloc(long n)
 }
 
 char	*ft_ifminus(char *result, long n, int count)
-	{
+{
 	result[0] = '-';
 	n *= -1;
 	while (1 < count)
@@ -70,14 +70,14 @@ char	*ft_ifminus(char *result, long n, int count)
 		n = n / 10;
 	}
 	return (result);
-	}
+}
 
 /*
 int	main(void)
 {
 	int	i;
 	int	j;
-	int x;
+	int	x;
 
 	x = -1;
 	i = INT_MAX;
