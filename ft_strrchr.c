@@ -10,10 +10,8 @@ char	*ft_strrchr(const char *s, int c)
 	s = s + j;
 	while (j >= 0)
 	{
-		if (*s == c)
-		{
+		if (*s == (unsigned char)c)
 			return ((char*)s);
-		}
 		s--;
 		j--;
 	}

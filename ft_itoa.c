@@ -1,44 +1,46 @@
 #include "libft.h"
-#include <string.h>
-
-int ft_count_calloc(int n);
-
-char *ft_itoa(int nbr)
+static int      ft_count_calloc(long n);
+char    *ft_itoa(int nbr)
 {
-	int	count;
-	char	*result;
-	long	n;
-	
-	n = nbr;
-	count = ft_count_calloc(n);
-	if (n == 0)
-		return (ft_strdup("0"));
-	result = (char *)ft_calloc(count + 1, sizeof(char));
-	if (n < 0)
-	{
-		n *= -1;
-		count++;
-
-	}
-	while (0 < count)
-	{
-		result[--count] = n % 10 + '0';
-		n = n / 10;
-	}
-	return (result);
+        int     count;
+        char    *result;
+        long    n;
+        n = nbr;
+        if (n == 0)
+                return (ft_strdup("0"));
+        count = ft_count_calloc(n);
+        result = (char *)ft_calloc(count + 1, sizeof(char));
+        if (!result)
+                return (NULL);
+        if (n < 0)
+        {
+                result[0] = '-';
+                n *= -1;
+        }
+        while (0 < count)
+        {
+                result[--count] = n % 10 + '0';
+                n = n / 10;
+        }
+        return (result);
 }
-
-int ft_count_calloc(int n)
+static int      ft_count_calloc(long n)
 {
-	size_t	count;
-	if (n < 0)
-		n *= -1;
-	count = 0;
-	while (n > 0)
-		n /= 10;
-	return (count);
+        int     count;
+        if (n < 0)
+        {
+                n *= -1;
+                count = 1;
+        }
+        else
+                count = 0;
+        while (n > 0)
+        {
+                n /= 10;
+                count++;
+        }
+        return (count);
 }
-
 /*
 int main(void)
 {
