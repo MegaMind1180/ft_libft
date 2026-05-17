@@ -6,13 +6,14 @@
 /*   By: wmezgoli <wmezgoli@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 17:05:13 by wmezgoli          #+#    #+#             */
-/*   Updated: 2026/05/17 17:05:15 by wmezgoli         ###   ########.fr       */
+/*   Updated: 2026/05/17 19:09:44 by wmezgoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 static int	ft_count_calloc(long n);
+char	*ft_ifminus(char *result, long n, int count);
 
 char	*ft_itoa(int nbr)
 {
@@ -29,8 +30,8 @@ char	*ft_itoa(int nbr)
 		return (NULL);
 	if (n < 0)
 	{
-		result[0] = '-';
-		n *= -1;
+		result = ft_ifminus(result, n, count);
+		return (result);
 	}
 	while (0 < count)
 	{
@@ -58,19 +59,35 @@ static int	ft_count_calloc(long n)
 	}
 	return (count);
 }
+
+char	*ft_ifminus(char *result, long n, int count)
+	{
+	result[0] = '-';
+	n *= -1;
+	while (1 < count)
+	{
+		result[--count] = n % 10 + '0';
+		n = n / 10;
+	}
+	return (result);
+	}
+
 /*
 int	main(void)
 {
 	int	i;
 	int	j;
+	int x;
 
+	x = -1;
 	i = INT_MAX;
 	j = INT_MIN;
 	printf("i: %s\n", ft_itoa(i));
 	printf("j: %s\n", ft_itoa(j));
+	printf("i: %s\n", ft_itoa(x));
 }
 
-
+/*
 
 #include "libft.h"
 #include <string.h>
