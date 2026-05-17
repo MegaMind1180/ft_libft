@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror 
 
 # ^sagt dem pc welchen Compiler er benutzen soll(in diesem fall cc) und mit welchen -flags er compilieren soll(42norm flags)ˆ
 

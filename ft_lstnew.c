@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 t_list	*ft_lstnew(void *content)
 {
@@ -23,3 +24,13 @@ t_list	*ft_lstnew(void *content)
 	node->next = NULL;
 	return (node);
 }
+/*
+int main(void)
+{
+	char c = 'h';
+	
+
+	t_list *newlist = ft_lstnew((void*)&c);
+	printf("%s", (char*)newlist->content);
+}
+*/
