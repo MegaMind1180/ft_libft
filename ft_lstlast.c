@@ -22,6 +22,7 @@ t_list	*ft_lstlast(t_list *lst)
 	return (lst);
 }
 
+/*
 int main(void)
 {
 	int i = 0;
@@ -38,3 +39,4 @@ int main(void)
 	}
 	printf("%d\n",*(int*)((ft_lstlast(lst))->content));
 }
+*/

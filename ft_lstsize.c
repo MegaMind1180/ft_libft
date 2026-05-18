@@ -24,3 +24,21 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (size);
 }
+/*
+int main(void)
+{
+	int i = 0;
+	t_list *lst = ft_lstnew(&i);
+	t_list *new;
+
+	i++;
+	while (i < 20)
+	{
+	//	printf("%d\n",*(int*)((ft_lstlast(lst))->content));
+		new = ft_lstnew((void*)&i);
+		ft_lstadd_back(&lst, new);
+		i++;
+	}
+	printf("%d\n", ft_lstsize(lst));
+}
+*/
