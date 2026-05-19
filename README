@@ -10,7 +10,7 @@ The library is divided into three parts:
 
 - **Part 1** — Reimplementations of standard libc functions (`ft_strlen`, `ft_memcpy`, `ft_strchr`, `ft_atoi`, etc.)
 - **Part 2** — Additional utility functions not found in libc (`ft_substr`, `ft_strjoin`, `ft_split`, `ft_itoa`, etc.)
-- **Bonus** — Linked list functions (`ft_lstnew`, `ft_lstadd_back`, `ft_lstmap`, etc.)
+- **Part 3** — Linked list functions (`ft_lstnew`, `ft_lstadd_back`, `ft_lstmap`, etc.)
 
 ## Instructions
 
@@ -23,15 +23,6 @@ git clone <your-repo-url>
 cd ft_libft
 make
 ```
-
-This produces a `libft.a` static library file.
-
-To also compile the bonus linked list functions:
-
-```bash
-make bonus
-```
-
 ### Using the library in your project
 
 Include the header and link the library when compiling:

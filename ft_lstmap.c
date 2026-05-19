@@ -6,7 +6,7 @@
 /*   By: wmezgoli <wmezgoli@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 17:06:18 by wmezgoli          #+#    #+#             */
-/*   Updated: 2026/05/17 17:06:20 by wmezgoli         ###   ########.fr       */
+/*   Updated: 2026/05/19 23:44:00 by wmezgoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,11 @@ int main()
     t_list  *tmp;
 
     // Liste aufbauen
-    lst = ft_lstnew("hello");
-    ft_lstadd_back(&lst, ft_lstnew("world"));
-    ft_lstadd_back(&lst, ft_lstnew("42"));
-
-    // Original ausgeben
+    lst = ft_lstnew(ft_strdup("hello"));
+    ft_lstadd_back(&lst, ft_lstnew(ft_strdup("world")));
+    ft_lstadd_back(&lst, ft_lstnew(ft_strdup("42")));
+    
+	// Original ausgeben
     printf("Original:\n");
     tmp = lst;
     while (tmp)
