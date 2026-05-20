@@ -34,6 +34,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	return (dest);
 }
 
+/*
 #include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -70,12 +71,10 @@ int main()
     t_list  *result;
     t_list  *tmp;
 
-    // Liste aufbauen
     lst = ft_lstnew(ft_strdup("hello"));
     ft_lstadd_back(&lst, ft_lstnew(ft_strdup("world")));
     ft_lstadd_back(&lst, ft_lstnew(ft_strdup("42")));
     
-	// Original ausgeben
     printf("Original:\n");
     tmp = lst;
     while (tmp)
@@ -84,10 +83,8 @@ int main()
         tmp = tmp->next;
     }
 
-    // ft_lstmap anwenden
     result = ft_lstmap(lst, ft_toupper_content, ft_del);
 
-    // Ergebnis ausgeben
     printf("Nach lstmap (toupper):\n");
     tmp = result;
     while (tmp)
@@ -100,4 +97,4 @@ int main()
     ft_lstclear(&result, ft_del);
     return (0);
 }
-
+*/
